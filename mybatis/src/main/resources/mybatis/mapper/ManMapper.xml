@@ -14,6 +14,7 @@
 
 
     <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <!--<select id="selectById" resultType="com.example.demo.domain.Man" parameterType="java.lang.Integer">-->
         select
         <include refid="Base_Column_List" />
         from man
