@@ -9,9 +9,9 @@ spring:
     password: admin
 
 mybatis:
-  config-locations:
-    classpath: mybatis/mybatis-config.xml
-  mapper-locations:
-    classpath: mybatis/mapper/*.xml
-  type-aliases-package: com.example.demo.domain
+  mapper-locations: "classpath:mybatis/mapper/*.xml"  #classpath*:mybatis*/**/*.xml
+  config-location: "classpath:mybatis-config.xml"
+
+props:
+  sql.show: true
 
