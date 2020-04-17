@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.dao.ManMapper;
 import com.example.demo.domain.Man;
 import io.swagger.annotations.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
@@ -12,6 +13,7 @@ import java.lang.reflect.Method;
 /**
  * Created by 苏文辉 on 2018/4/2.
  */
+@Slf4j
 @RestController
 @Api(description = "Man信息管理")
 public class ManController {
@@ -45,6 +47,7 @@ public class ManController {
     @RequestMapping(value = "man/getManById/{id}", method = RequestMethod.GET)
     public Man getManById(@PathVariable(value = "id") int id){
         Man man = manMapper.selectById(id);
+        log.info("{}, {}", man.getId(), man.getName());
         return man;
     }
 
