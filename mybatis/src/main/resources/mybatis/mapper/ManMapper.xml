@@ -13,12 +13,18 @@
     </sql>
 
 
-    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.String">
     <!--<select id="selectById" resultType="com.example.demo.domain.Man" parameterType="java.lang.Integer">-->
         select
         <include refid="Base_Column_List" />
         from man
-        where id = #{id}
+        where id = ${id}
     </select>
+
+    <update id="updateById" parameterType="java.lang.String">
+        update man
+        set name = id
+        where id = ${id}
+    </update>
 
 </mapper>

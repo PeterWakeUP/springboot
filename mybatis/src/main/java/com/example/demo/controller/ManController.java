@@ -45,8 +45,9 @@ public class ManController {
             @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
     })
     @RequestMapping(value = "man/getManById/{id}", method = RequestMethod.GET)
-    public Man getManById(@PathVariable(value = "id") int id){
+    public Man getManById(@PathVariable(value = "id") String id){
         Man man = manMapper.selectById(id);
+        manMapper.updateById("1");
         log.info("{}, {}", man.getId(), man.getName());
         return man;
     }

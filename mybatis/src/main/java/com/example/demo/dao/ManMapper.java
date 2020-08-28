@@ -13,5 +13,7 @@ public interface ManMapper {
 
     //@Select("select * from man where id = #{id}")
     //没找到selectById的实现，没找到ManMapper.xml文件, 注解可以
-    Man selectById(@Param("id") Integer id);
+    Man selectById(@Param("id") String id);
+
+    int updateById(@Param("id") String id);
 }

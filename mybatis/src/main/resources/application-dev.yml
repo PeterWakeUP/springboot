@@ -12,6 +12,12 @@ mybatis:
   mapper-locations: "classpath:mybatis/mapper/*.xml"  #classpath*:mybatis*/**/*.xml
   config-location: "classpath:mybatis-config.xml"
 
+
+# 日志配置
+logging:
+  level:
+    com.example: debug
+
 props:
   sql.show: true
 
